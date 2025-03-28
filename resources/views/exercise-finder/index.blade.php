@@ -43,6 +43,25 @@
                                 </select>
                             </div>
 
+                        <!-- Calories Selection -->
+                        <div class="mb-4">
+                            <label for="calories" class="block text-lg font-medium">Maximum Calories per Hour</label>
+                            <select name="calories" id="calories" class="form-select mt-1 block w-full" required>
+                                <option value="200">200 cal</option>
+                                <option value="250">250 cal</option>
+                                <option value="300">300 cal</option>
+                                <option value="350">350 cal</option>
+                                <option value="400">400 cal</option>
+                                <option value="450">450 cal</option>
+                                <option value="500">500 cal</option>
+                                <option value="550">550 cal</option>
+                                <option value="600">600 cal</option>
+                                <option value="650">650 cal</option>
+                                <option value="700">700 cal</option>
+                                <option value="750">750 cal</option>
+                                <option value="800">800 cal</option>
+                            </select>
+                        </div>
 
                         <!-- Submit Button -->
                         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -58,8 +77,8 @@
                         <div class="bg-white border rounded-lg shadow-sm p-4">
                         <h4 class="font-semibold text-xl">{{ $exercise->name }}</h4> <br>
                         <p><strong>Description:</strong>{{ $exercise->description }}</p> <br>
-                        <p><strong>Calories:</strong>{{ $exercise->calories_per_hour }}</p> <br>
                         <p><strong>Intensity:</strong> {{ ($exercise->intensity) }}</p> <br>
+                        <p><strong>Calories:</strong>{{ $exercise->calories_per_hour }}</p> <br>
                         <p><strong>Type:</strong> {{ ($exercise->type) }}</p>
                             </div>
                     @endforeach
