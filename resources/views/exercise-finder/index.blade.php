@@ -77,9 +77,8 @@
                         <div class="bg-white border rounded-lg shadow-sm p-4">
                         <h4 class="font-semibold text-xl">{{ $exercise->name }}</h4> <br>
                         <p><strong>Description:</strong>{{ $exercise->description }}</p> <br>
-                        <p><strong>Intensity:</strong> {{ ($exercise->intensity) }}</p> <br>
+                        <p><strong>Instructions:</strong>{{ $exercise->Instructions }}</p> <br>
                         <p><strong>Calories:</strong>{{ $exercise->calories_per_hour }}</p> <br>
-                        <p><strong>Type:</strong> {{ ($exercise->type) }}</p>
                             </div>
                     @endforeach
                         </div>
