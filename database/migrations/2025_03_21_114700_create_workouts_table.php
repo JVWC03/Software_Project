@@ -16,6 +16,8 @@ return new class extends Migration
 
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Foreign key
             $table->foreignId('exercise_id')->constrained()->onDelete('cascade'); // Foreign key
+            $table->string('intensity');
+            $table->string('type');
             $table->integer('calories');
             $table->integer('duration');
             $table->date('date');
