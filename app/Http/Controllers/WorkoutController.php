@@ -32,8 +32,8 @@ class WorkoutController extends Controller
     {
     $request->validate([
         'exercise_id' => 'required|exists:exercises,id',
-        'intensity' => 'required|string|max:255',
-        'type' => 'required|string|max:255',
+        'intensity' => 'required|string',
+        'type' => 'required|string',
         'calories' => 'required|integer',
         'duration' => 'required|integer',
         'date' => 'required|date',
@@ -48,6 +48,8 @@ class WorkoutController extends Controller
         'duration' => $request->duration,
         'date' => $request->date,
     ]);
+
+    return to_route('workouts.index')->with('success', 'Workout created successfully!');
     }
 
     /**
