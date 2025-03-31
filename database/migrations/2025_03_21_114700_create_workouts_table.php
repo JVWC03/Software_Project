@@ -18,9 +18,11 @@ return new class extends Migration
             $table->foreignId('exercise_id')->constrained()->onDelete('cascade'); // Foreign key
             $table->string('intensity');
             $table->string('type');
+            $table->integer('number')->default(1);
             $table->integer('calories');
             $table->integer('duration');
             $table->date('date');
+            $table->text('notes');
 
             $table->timestamps();
         });

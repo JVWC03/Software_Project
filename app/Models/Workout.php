@@ -14,9 +14,11 @@ class Workout extends Model
         'exercise_id',
         'intensity',
         'type',
+        'number',
         'calories',
         'duration',
         'date',
+        'notes',
     ];
 
     public function user()

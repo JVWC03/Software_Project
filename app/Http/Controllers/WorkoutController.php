@@ -34,9 +34,11 @@ class WorkoutController extends Controller
         'exercise_id' => 'required|exists:exercises,id',
         'intensity' => 'required|string',
         'type' => 'required|string',
+        'number' => 'required|integer',
         'calories' => 'required|integer',
         'duration' => 'required|integer',
         'date' => 'required|date',
+        'notes' => 'string|nullable',
     ]);
 
     Workout::create([
@@ -44,9 +46,11 @@ class WorkoutController extends Controller
         'exercise_id' => $request->exercise_id,
         'intensity' => $request->intensity,
         'type' => $request->type,
+        'number' => $request->number,
         'calories' => $request->calories,
         'duration' => $request->duration,
         'date' => $request->date,
+        'notes' => $request->notes,
     ]);
 
     return to_route('workouts.index')->with('success', 'Workout created successfully!');
