@@ -6,6 +6,10 @@
         @method($method)
     @endif
 
+    <x-alert-success>
+        {{ session('success') }}
+    </x-alert-success>
+
     <!-- Exercise -->
     <div class="mb-4">
         <label for="exercise_id" class="block text-sm font-medium text-gray-700">Exercise</label>
