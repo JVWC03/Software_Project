@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Workout;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WorkoutController extends Controller
 {
@@ -13,7 +14,8 @@ class WorkoutController extends Controller
      */
     public function index()
 {
-    $workouts = Workout::all();
+    $workouts = Workout::where('user_id', Auth::id())->get();
+
     return view('workouts.index', compact('workouts'));
 }
 
@@ -42,7 +44,7 @@ class WorkoutController extends Controller
     ]);
 
     Workout::create([
-        'user_id' => auth()->id(),
+        'user_id' => Auth()->id(),
         'exercise_id' => $request->exercise_id,
         'intensity' => $request->intensity,
         'type' => $request->type,
