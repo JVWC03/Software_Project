@@ -28,6 +28,10 @@ Route::get('/workouts', [WorkoutController::class, 'index'])->name('workouts.ind
 Route::get('/workouts/create', [WorkoutController::class, 'create'])->name('workouts.create');
 Route::post('/workouts', [WorkoutController::class, 'store'])->name('workouts.store');
 
+Route::get('/workouts/{workout}/edit', [WorkoutController::class, 'edit'])->name('workouts.edit');
+Route::put('/workouts/{workout}', [WorkoutController::class, 'update'])->name('workouts.update');
+Route::delete('/workouts/{workout}', [WorkoutController::class, 'destroy'])->name('workouts.destroy');
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 require __DIR__.'/auth.php';

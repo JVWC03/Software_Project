@@ -63,7 +63,7 @@ class WorkoutController extends Controller
      */
     public function show(Workout $workout)
     {
-        //
+
     }
 
     /**
@@ -71,22 +71,40 @@ class WorkoutController extends Controller
      */
     public function edit(Workout $workout)
     {
-        //
-    }
+        return view('workouts.edit')->with('workout', $workout);
 
+        return to_route('workouts.index')->with('success', 'Workout edited successfully!');
+    }
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, Workout $workout)
     {
-        //
+    $request->validate([
+        'exercise_id' => 'required|exists:exercises,id',
+        'intensity' => 'required|string',
+        'type' => 'required|string',
+        'number' => 'required|integer',
+        'calories' => 'required|integer',
+        'duration' => 'required|integer',
+        'date' => 'required|date',
+        'notes' => 'string|nullable',
+    ]);
+
+    $workout->update($request->all());
+
+    return to_route('dashboard')->with('success', 'Workout updated successfully!');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Workout $workout)
     {
-        //
+    $workout->delete();
+
+    return to_route('dashboard')->with('success', 'Workout deleted successfully!');
     }
+
 }
