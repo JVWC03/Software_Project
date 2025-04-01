@@ -1,7 +1,7 @@
 <!-- This is the exercise finder page -->
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-bold text-3xl text-blue-700 leading-tight">
             {{ __('Exercise Finder') }}
         </h2>
         <!-- Success message component -->
@@ -11,10 +11,10 @@
     </x-slot>
 
 
-    <div class="py-12">
+    <div class="bg-blue-100 min-h-screen py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+                <div class="p-6 text-blue-700">
 
                     <form action="{{ route('exercise-finder.recommend') }}" method="POST" class="mb-8">
                         @csrf
@@ -22,8 +22,8 @@
 
                         <!-- Intensity Selection -->
                         <div class="mb-4">
-                            <label for="intensity" class="block text-lg font-medium">Intensity</label>
-                            <select name="intensity" id="intensity" class="form-select mt-1 block w-full" required>
+                            <label for="intensity" class="block text-md text-neutral-900 font-medium">Intensity</label>
+                            <select name="intensity" id="intensity" class="form-select mt-1 text-blue-700 block w-full" required>
                                 <option value="low">Low</option>
                                 <option value="medium">Medium</option>
                                 <option value="high">High</option>
@@ -32,8 +32,8 @@
 
                         <!-- Type Selection -->
                         <div class="mb-4">
-                            <label for="type" class="block text-lg font-medium">Type</label>
-                            <select name="type" id="type" class="form-select mt-1 block w-full" required>
+                            <label for="type" class="block text-md text-neutral-900 font-medium">Type</label>
+                            <select name="type" id="type" class="form-select mt-1 text-blue-700 block w-full" required>
                                 <option value="cardio">Cardio</option>
                                 <option value="core">Core</option>
                                 <option value="flexibility">Flexibility</option>
@@ -45,8 +45,8 @@
 
                         <!-- Calories Selection -->
                         <div class="mb-4">
-                            <label for="calories" class="block text-lg font-medium">Maximum Calories per Hour</label>
-                            <select name="calories" id="calories" class="form-select mt-1 block w-full" required>
+                            <label for="calories" class="block text-md text-neutral-900 font-medium">Maximum Calories per Hour</label>
+                            <select name="calories" id="calories" class="form-select mt-1 text-blue-700 block w-full" required>
                                 <option value="200">200 cal</option>
                                 <option value="250">250 cal</option>
                                 <option value="300">300 cal</option>
@@ -74,7 +74,7 @@
                         <h3 class="font-semibold text-lg mt-8 mb-4">Recommended Exercises</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             @foreach($exercises as $exercise)
-                        <div class="bg-white border rounded-lg shadow-sm p-4">
+                        <div class="bg-white border text-neutral-900 rounded-lg shadow-sm p-4">
                         <h4 class="font-semibold text-xl">{{ $exercise->name }}</h4> <br>
                         <p><strong>Description:</strong>{{ $exercise->description }}</p> <br>
                         <p><strong>Instructions:</strong>{{ $exercise->Instructions }}</p> <br>
